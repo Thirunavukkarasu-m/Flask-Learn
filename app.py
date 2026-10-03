@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,url_for
 from user import *
 # from user.routes import *
 from home.route import *
@@ -10,12 +10,12 @@ app.register_blueprint(users_bp,url_prefix='/users')
 app.register_blueprint(home,url_prefix='/')
 
 
-@app.route('/about')
+@app.route('/about',methods=['POST','GET'])
 def about():return 'this about page'
 
-@app.route('/summa')
+@app.get('/summa')
 def summa():
-    return 'summa page '
+    return url_for('about')
 
 @app.route("/profile/<int:id>/")
 def profile(id):

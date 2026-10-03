@@ -6,9 +6,9 @@ users_bp=Blueprint('user',__name__)
 def users():
     return "List Of Users"
 
-@users_bp.route('/profile',methods=['post'])
+@users_bp.route('/create',methods=['post','get'])
 def profile():
-    return 'this the progile page'
+    return 'this the profile page'
 
 
 @users_bp.route('go/<id>',methods=['put','get','post'])

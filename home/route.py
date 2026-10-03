@@ -1,9 +1,14 @@
-from flask import Blueprint
+from flask import Blueprint,url_for,render_template
 
-home=Blueprint("home",__name__)
+home=Blueprint("home",__name__,template_folder='../templates/home')
 
-@home.route('/')
-
+@home.get('/')
 def homes():
-    return "This The Landing page"
+    return render_template('index.html')
 
+# @home.get('/create')
+# def show_create_form():
+#     pass
+# @home.post('/edit/<int:user_id>')
+# def show_create_form():
+#     pass
