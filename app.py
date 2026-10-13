@@ -5,6 +5,7 @@ from home.route import *
 from home import *
 
 app=Flask(__name__)
+app.secret_key='random'
 
 app.register_blueprint(users_bp,url_prefix='/users')
 app.register_blueprint(home,url_prefix='/')
