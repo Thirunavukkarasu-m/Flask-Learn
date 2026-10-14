@@ -1,11 +1,16 @@
 from flask import Flask,url_for
 from user import *
+from config.config import *
 # from user.routes import *
 from home.route import *
 from home import *
+import os 
+
 
 app=Flask(__name__)
-app.secret_key='random'
+app.config.from_object(Config)
+os.makedirs(app.config['UPLOAD_FOLDER'],exist_ok=True)
+
 
 app.register_blueprint(users_bp,url_prefix='/users')
 app.register_blueprint(home,url_prefix='/')
