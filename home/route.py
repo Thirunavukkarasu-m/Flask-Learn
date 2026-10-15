@@ -1,5 +1,5 @@
 from flask import Blueprint,url_for,render_template,request,redirect,flash,current_app
-from user.models import users
+# from user.models import users
 import os
 from werkzeug.utils import secure_filename
 from utills.file_helper import valid_file
