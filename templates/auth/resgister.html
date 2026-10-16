@@ -1,0 +1,42 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<h2 class="text-xl font-semibold mb-4">Register</h2>
+
+{% if error %}
+  <p class="text-red-500">{{ error }}</p>
+{% endif %}
+
+<form method="POST"
+      enctype="multipart/form-data"
+      class="space-y-4">
+
+  <div>
+    <label class="block font-medium">Name</label>
+    <input type="text" name="name" class="border p-2 w-full">
+  </div>
+
+  <div>
+    <label class="block font-medium">Email</label>
+    <input type="email" name="email" class="border p-2 w-full">
+  </div>
+   <div>
+    <label class="block font-medium">Password</label>
+    <input type="password" name="password" class="border p-2 w-full">
+  </div>
+
+  <!-- <div>
+    <label class="block font-medium">Upload File (image or document)</label>
+    <input type="file" name="file" class="border p-2 w-full">
+  </div> -->
+
+  <button type="submit"
+          class="bg-green-500 text-white px-4 py-2 rounded">
+   Register
+  </button>
+
+</form>
+{% endblock %}

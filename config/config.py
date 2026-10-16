@@ -12,9 +12,11 @@ class Config:
     os.path.dirname(os.path.dirname(__file__))
     )
 
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(
-    BASE_DIR, 'app.db'
-    )
-
+    # SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(
+    # BASE_DIR, 'app.db'
+   
+    # )
+    # SQLALCHEMY_DATABASE_URI='mysql+mysqldb://root:Thiru@07@localhost/flaskdb'
+    SQLALCHEMY_DATABASE_URI = 'mysql+mysqldb://root:Thiru%4007@localhost/flask_db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     
