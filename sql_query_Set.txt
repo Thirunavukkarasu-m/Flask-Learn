@@ -1,0 +1,55 @@
+from user.models import User
+from extension import db
+
+
+1. Create — Single insert
+a = User(name="arjun", age=2, location="chennai")
+db.session.add(a)
+db.session.commit()
+
+2. Multiple insert
+
+db.session.add_all([
+    User(name="arjun", age=2, location="chennai"),
+    User(name="bharathi", age=1, location="chennai"),
+])
+db.session.commit()
+
+3. Read — Fetch all
+
+c = User.query.all()
+print(c)
+
+4. Fetch one — ID
+d = db.session.get(User, 2)
+print(d)
+
+5. Filter
+
+d = User.query.filter_by(name="arjun").all()
+
+6. Update
+e = db.session.get(User, 1)
+e.age = 3
+db.session.commit()
+
+7. Delete
+d = db.session.get(User, 1)
+db.session.delete(d)
+db.session.commit()
+
+8. First record
+d = User.query.first()
+
+9. Count records
+count = User.query.count()
+
+count = User.query.count()
+
+
+
+10. Sort by name
+users = User.query.order_by(User.name).all()
+
+
+
